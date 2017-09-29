@@ -1,0 +1,45 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "npm调试",
+            "runtimeExecutable": "npm",
+            "runtimeArgs": [
+                "run",
+                "dev"
+                //    "debug"
+            ],
+            "port": 5858
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "打包",
+            "runtimeExecutable": "npm",
+            "runtimeArgs": [
+                "run-script",
+                "pack"
+            ],
+            "port": 5858
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "调试",
+            "args": [],
+            "cwd": "${workspaceRoot}",
+            "program": "${workspaceRoot}/src/Main.js",
+            // "program": "${workspaceRoot}/dist/bundle.js",
+            "runtimeExecutable": null,
+            "runtimeArgs": [
+                "--nolazy",
+                "--use_strict"
+            ],
+            "env": {
+                "NODE_ENV": "development"
+            }
+        }
+    ]
+}
